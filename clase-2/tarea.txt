@@ -1,0 +1,14 @@
+Hacer dos funciones:
+Funcion1: obtener toda la informacion del ordenador y generar un archivo de texto con datos 
+como el nombre de usuario, la RAM la memoria libre y la CPU.
+Funcion2: leer el archivo genrado y transformarlo en un formato como este : json
+    [{
+    "propiedades":{
+        "owner":"Bethsy",
+        "cpu": "Intel"
+    }
+    }]
+
+    Bonus: 
+    Convertir la RAM y la memoria libre a gigabytes.
+    Guardar el proceso que mas recursos esta demandando al momento de ejecutarse este servicio de Node.

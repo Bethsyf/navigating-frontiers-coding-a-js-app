@@ -43,7 +43,6 @@ insert into Groups (id, name, color, ownerUserId, createdAt) values (10, 'Grupo 
 -- Homework
 
 -- count how many rows are in the table groups
-<<<<<<< HEAD
 
 SELECT COUNT(*) 
 FROM Groups;
@@ -102,23 +101,16 @@ INNER JOIN Users u ON g.ownerUserId = u.id;
 
 -- insert 1 new group with name 'Grupo # 5' related to the user 'liliana'
 
-
+INSERT INTO Groups (id, name, color, ownerUserId, createdAt) VALUES (11, 'Grupo # 5', '#33FFCE', 5, '2024-12-31');
 
 -- update the group created in the previous step and change the column name to be 'Salida Jardín'
+
+UPDATE Groups SET name = 'Salida Jardín' WHERE name = 'Grupo # 5';
+
 -- update the group created in the previous step and change the ownerUserId to be 100, explain what happens
+
+UPDATE Groups SET ownerUserId = 100 WHERE name = 'Salida Jardín';  -- insert or update on table "groups" violates foreign key constraint "fk_groups_users_id"
+
 -- delete the user 'liliana' from the table Users, explain what happens
-=======
--- select all groups that belongs to the User #1
--- select all groups that belongs to the user 'juan camilo', include only the columns group id, group name, group color and user name
--- select all groups created between the dates '2023-01-01' and '2023-12-31'
--- select all groups that contains the word 'Grupo' at the beginning of the column group name
--- select all groups that belongs to these two users 'miguel' and 'liliana'
--- select all groups and apply asc ordering
--- select all groups and apply desc ordering
--- select only the first 5 groups ordered by name asc 
--- select all groups with their respective users, but include all columns from the table groups except ownerUserId and include the user name
--- insert 1 new group with name 'Grupo # 5' related to the user 'liliana'
--- update the group created in the previous step and change the column name to be 'Salida Jardín'
--- update the group created in the previous step and change the ownerUserId to be 100, explain what happens
--- delete the user 'liliana' from the table Users, explain what happens
->>>>>>> 89b992fb0c72eb962ad364250e29704a9c850226
+
+DELETE FROM Users WHERE name = 'liliana';  --update or delete on table "users" violates foreign key constraint "fk_groups_users_id" on table "groups"
